@@ -11,11 +11,14 @@ from gensim.models import Word2Vec #, FastText
 
 
 class WEC(nn.Module):
-    def __init__(self, max_num_voters, max_num_alternatives):
+    def __init__(self, 
+                 max_num_voters: int, 
+                 max_num_alternatives: int
+                 ):
         super(WEC, self).__init__()
         self.max_num_voters = max_num_voters
         self.max_num_alternatives = max_num_alternatives
-
+        
     def _preprocess_profiles(self, profile_tensor):
         B, V, A = profile_tensor.shape
 

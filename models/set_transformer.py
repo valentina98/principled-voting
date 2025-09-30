@@ -57,9 +57,10 @@ class PoolingMultiheadAttention(nn.Module):
 
 class SetTransformer(nn.Module):
     def __init__(self, 
-                 max_num_voters, 
-                 max_num_alternatives, 
-                 architecture_parameters=None):
+                 max_num_voters: int, 
+                 max_num_alternatives: int,
+                 architecture_parameters: dict = None,
+                ):
         super().__init__()
         
         architecture_parameters = architecture_parameters or {}
